@@ -3,6 +3,7 @@
 function Carga(nombre,fechaInicial,fechaFinal){
 	//tabla donde duardamos la lista de comisiones
 	var tablaDatos = $("#tablaComisiones > tbody");
+	
 	var route = "http://localhost/zzz/public/comisiones";
 
 	var vendedor=$("#vendedor").val();

@@ -2,7 +2,7 @@ $(document).ready(function(){
       $( function() { 
 
         $( "#codigo" ).autocomplete({
-            source: "http://localhost/zzz/public/producto/autocomplete",
+            source: "http://localhost/fff/public/producto/autocomplete",
             minlenght:1,
             autoFocus:true,
             select:function(e,ui){

@@ -16,29 +16,39 @@
 <head>
   <meta charset="UTF-8">
     <title>Sistema Joyeria | Dashboard</title>
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+
+    <link href="{{ asset('/plugins/jQueryUI/jquery-ui.css') }}" rel="stylesheet" type="text/css" />
+    
+    <!--<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">-->
         <!-- INICIO FECHA             -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <!-- Optional theme -->
 
 
-    <!-- Jquery -->
+    <!-- Jquery 
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <!-- Datepicker Files -->
     
 
 
+    
+    <link href="{{ asset('/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" /> 
+    <link href="{{ asset('/css/ionicons.min.css') }}" rel="stylesheet" type="text/css" /> 
+    <link href="{{ asset('/css/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css" /> 
+    <link href="{{ asset('/css/buttons.dataTables.min.css') }}" rel="stylesheet" type="text/css" /> 
 
+  
+    <!--
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-    <!-- Ionicons -->
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-<<<<<<< HEAD
 
 
-    <!-- DataTables -->
     <link href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css" rel="stylesheet">
+    
+    -->
 
 
 
@@ -47,9 +57,6 @@
     <!-- Languaje -->
     <script src="{{asset('/datePicker/locales/bootstrap-datepicker.es.min.js')}}"></script>
                 <!-- FIN FECHA  -->
-
-=======
->>>>>>> origin/master
     
    <script src="{{ asset('/sweet/sweetalert-dev.js') }}" type="text/javascript"></script>
 
@@ -158,14 +165,18 @@
     <script src="{{ asset('/plugins/jQuery/jQuery-2.1.3.min.js') }}"></script>
     <!-- jQuery UI 1.11.2 -->
     <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.min.js" type="text/javascript"></script>
+
+    <script src="{{ asset('/plugins/jQueryUI/jquery-ui.js') }}"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
        $.widget.bridge('uibutton', $.ui.button);
     </script>
     <!-- Bootstrap 3.3.2 JS -->
     <script src="{{ asset('/bootstrap/js/bootstrap.min.js') }}" type="text/javascript"></script>    
-    <!-- Morris.js charts -->
+    <!-- Morris.js charts 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    -->
+    
     <script src="{{ asset('/plugins/morris/morris.min.js') }}" type="text/javascript"></script>
     <!-- Sparkline -->
     <script src="{{ asset('/plugins/sparkline/jquery.sparkline.min.js') }}" type="text/javascript"></script>
@@ -205,18 +216,21 @@
     <script src="{{ asset('/plugins/datatables/dataTables.bootstrap.min.js') }}"></script>
 
 
+    <script src="{{ asset('/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('/plugins/datatables/dataTables.buttons.min.js') }}"></script>
+
+    <script src="{{ asset('/plugins/datatables/pdfmake.min.js') }}"></script>
+    <script src="{{ asset('/plugins/datatables/vfs_fonts.js') }}"></script>
+    <script src="{{ asset('/plugins/datatables/buttons.html5.min.js') }}"></script>
+    <script src="{{ asset('/plugins/datatables/buttons.flash.min.js') }}"></script>
+    <script src="{{ asset('/plugins/datatables/jszip.min.js') }}"></script>
+    <script src="{{ asset('/plugins/datatables/buttons.print.min.js') }}"></script>
 
 
-    <script src="{{ asset('https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js') }}"></script>
-    <script src="{{ asset('//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js') }}"></script>
-    <script src="{{ asset('//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js') }}"></script>
-    <script src="{{ asset('//cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js') }}"></script>
-    <script src="{{ asset('//cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js') }}"></script>
-    <script src="{{ asset('//cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js') }}"></script>
-    <script src="{{ asset('//cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js') }}"></script>
 
-   
+    
+    
+
 
     @yield('scripts')
 
