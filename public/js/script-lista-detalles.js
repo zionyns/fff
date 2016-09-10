@@ -17,7 +17,7 @@ function Carga(){
 	var venta=$("#venta").text();
 
 	var tablaDatos = $('#Tdetalles > tbody');
-	var route = "/zzz/public/detalleventas/detalles/"+venta+"";
+	var route = "/fff/public/detalleventas/detalles/"+venta+"";
 
 
 
@@ -41,7 +41,7 @@ function Carga(){
 }
 
 function Mostrar(btn){
-	var route = "http://localhost/zzz/public/detalleventa/"+btn.value+"/edit";
+	var route = "/fff/public/detalleventa/"+btn.value+"/edit";
 
 	$.get(route, function(res){
 		
@@ -65,7 +65,7 @@ $(document).on('click', '#actualizar',function (){
 	var total = $("#total").val();
 	
 
-	var route = "http://localhost/zzz/public/detalleventa/"+value+"";
+	var route = "/fff/public/detalleventa/"+value+"";
 	var token = $("#token").val();
 
 
@@ -97,7 +97,7 @@ $(document).on('click', '#actualizar',function (){
 
 
 function Eliminar(btn){
-	var route = "http://localhost/zzz/public/detalleventa/"+btn.value+"";
+	var route = "/fff/public/detalleventa/"+btn.value+"";
 	var token = $("#token").val();
 	$.ajax({
 		url: route,

@@ -31,61 +31,64 @@
     
         
         <div class="col-md-4">
-                {!! Form::label('codigo:')!!}
+                {!! Form::label('CODIGO:')!!}
                 {!! Form::text('CodIngreso',$codigo,['id'=>'CodIngreso','class'=>'form-control','required','disabled'])!!}
         </div>
     
-
+</div>
+</br>
+</br>
                 
 
-<div >
+<div class="row" >
+<div>
     <form action="/" method="post">
 
   
            
             
-        <div class="col-md-1">
-            <label for="tipo">id:</label>
-             <input type="text" name="idproducto" id="idproducto" class="form-control" >   
+        
+             <!--<label for="tipo">id:</label>-->
+             <input type="hidden" name="idproducto" id="idproducto" class="form-control" >   
 
-        </div>
+        
         <div class="col-md-2">
-            <label for="tipo">Producto:</label>
+            <label for="tipo">ELIJA PRODUCTO:</label>
              <input type="text" name="codigo" id="codigo" class="form-control" >   
 
         </div>
 
-        <div class="col-md-3">
-            <label for="tipo">Descripcion:</label>
-             <input type="text" name="descripcion" id="descripcion" class="form-control" >   
+        <div class="col-md-2">
+            <label for="tipo">DESCRIPCION:</label>
+             <input type="text" name="descripcion" id="descripcion" class="form-control" disabled>   
 
         </div>
 
 
         <div class="col-md-1">
-            <label for="cantidad">Cantidad:</label>
+            <label for="cantidad">CANTIDAD:</label>
             <input type="number" name="cantidad" id="cantidad" class="form-control" />
 
 
         </div>
         
         <div class="col-md-2">
-            <label for="cantidad">Peso:</label>
+            <label for="cantidad">PESO:</label>
             <input type="number" name="peso" id="peso" class="form-control" />
 
 
         </div>
 
         <div class="col-md-2">
-            <label for="total">Precio:</label>
+            <label for="total">PRECIO:</label>
             <input type="number" name="precio" id="precio" class="form-control" />
 
 
         </div>
 
-        <div class="col-md-2">
-        <label for="total">.</label>
-            <button type="button" id="agregar" class="btn btn-primary" onclick="agregar_fila();">Agregar</button>
+        <div class="col-md-3">
+        <label for="total" style="visibility:hidden">.</label>
+            <button type="button" id="agregar" class="btn btn-primary form-control" onclick="agregar_fila();">AGREGAR A CARRITO</button>
         </div>
     </form>
 
@@ -107,7 +110,7 @@
 
                 
                 <div class="box-header with-border">
-                    <h3 class="box-title">Detalles</h3>
+                    <h3 class="box-title">DETALLES DE INGRESO DE PRODUCTO</h3>
                     
                     <div class="box-tools pull-right">  
                         
@@ -124,12 +127,12 @@
     <table id="tabla" class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Producto</th>
-                <th>Cantidad</th>
-                <th>Peso</th>
-                <th>Precio</th>
-                <th>Operaciones</th>
+                <th>ID</th>
+                <th>PRODUCTO</th>
+                <th>CANTIDAD</th>
+                <th>PESO</th>
+                <th>PRECIO</th>
+                <th>OPERACIONES</th>
             </tr>
         </thead>
         <tbody id="tabla-elementos">
@@ -146,8 +149,8 @@
 
 
      <div class="form-group">
-            <div class="col-md-6 col-md-offset-4">
-                {!! Form::button('Realizar Ingreso ',['id'=>'btnRecorrer','class'=>'btn btn-primary'])!!}
+            <div class="col-md-5 col-md-offset-3">
+                {!! Form::button('REALIZAR OPERACION ',['id'=>'btnRecorrer','class'=>'btn btn-primary form-control'])!!}
 
             </div>
     </div>
@@ -189,9 +192,35 @@ var tablaElementos = document.getElementById('tabla-elementos');
     var precio      = txtprecio.value || '';
 
 
+    if (!codproducto || !codproducto.trim().length) {
+            
+        swal("ERROR", "INGRESE UN CODIGO", "error");
+        return;
+    }
+
+    if (!cantidad || !cantidad.trim().length) {
+            
+        swal("ERROR", "INGRESE LA CANTIDAD", "error");
+        return;
+    }
+
+    if (!peso || !peso.trim().length) {
+            
+        swal("ERROR", "INGRESE PESO", "error");
+        return;
+    }
+
+    if (!precio || !precio.trim().length) {
+            
+        swal("ERROR", "INGRESE PRECIO", "error");
+        return;
+    }
+
 
     txtcantidad.value = '';
+    txtpeso.value='';
     txtprecio.value = '';
+    txtproducto.value='';
 
     txtproducto.focus();
 
@@ -233,8 +262,8 @@ var tablaElementos = document.getElementById('tabla-elementos');
         var element2 = document.createElement("input");
                
         element2.type = "button" ;
-        element2.value  ="X";
-        element2.className="btn btn-primary";
+        element2.value  ="x";
+        element2.className="btn btn-primary form-control";
         tdoperaciones.appendChild(element2);
 
         element2.onclick=function(){

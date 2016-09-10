@@ -1,7 +1,7 @@
 $(document).ready(function(){
       $( function() {    
         $( "#codigo" ).autocomplete({
-            source: "http://localhost/zzz/public/producto/autocomplete",
+            source: "/fff/public/producto/autocomplete",
             minlenght:1,
             autoFocus:true,
             select:function(e,ui){
@@ -36,9 +36,30 @@ $("#total" ).focus(function() {
 
 
 
-$("#btnRecorrer").click(function () 
-    {
-        var hoy = new Date();
+$("#btnRecorrer").click(function () {
+
+
+    if ($('#tabla >tbody >tr').length == 0){
+        swal("ERROR", "INGRESE PRODUCTOS", "error");
+        return;
+    }
+
+
+    swal({      title: "ESTAS SEGURO?",   
+                text: "",   
+                type: "warning",   showCancelButton: true,   
+                confirmButtonColor: "#DD6B55",   
+                confirmButtonText: "CONFIRMAR",   
+                cancelButtonText: "CANCELAR",   
+                closeOnConfirm: false,   
+                closeOnCancel: false }, 
+                
+    function(isConfirm){   
+    if (isConfirm) {
+
+
+
+    var hoy = new Date();
     var dia = hoy.getDate();
     var mes = hoy.getMonth() + 1 ;
     var año = hoy.getFullYear();
@@ -75,7 +96,7 @@ $("#btnRecorrer").click(function ()
 
 		alert(codigo + ' - ' + fecha + ' - ' + ' - '); 
 
-		var route1 = "http://localhost/zzz/public/ingreso";
+		var route1 = "/fff/public/ingreso";
 		var token = $("#token").val();
 
 		$.ajax({
@@ -121,7 +142,7 @@ $("#btnRecorrer").click(function ()
 
 
 
-            var route = "http://localhost/zzz/public/detalleingreso";
+            var route = "/fff/public/detalleingreso";
 			var token = $("#token").val();
 
 			$.ajax({
@@ -140,6 +161,18 @@ $("#btnRecorrer").click(function ()
 				}
 				})
 
-        })
+        })//fin recorrido detales
+
+        swal("SUCCESSFULL!", "PRODUCTOS AGREGADOS CORRECTAMENTE", "success");
+
+
+
+
+                                        
+
+                    } else {     
+                        swal("CANCELADO","UD A CANCELADO LA OPERACION ","error");   
+                    }
+        });
     });
 

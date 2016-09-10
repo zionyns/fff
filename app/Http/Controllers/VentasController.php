@@ -84,6 +84,8 @@ class VentasController extends Controller {
 
 		if($request->ajax()){
 
+			
+
 
             venta::create($request->all());
             return response()->json([

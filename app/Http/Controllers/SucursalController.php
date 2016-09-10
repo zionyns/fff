@@ -46,26 +46,6 @@ class SucursalController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function  CodigoSucursal(){
-
-		//hacemos consulta para recuoeraer todo los codigos 
-
-		
-		$codigos = DB::table('sucursals')->lists('CodSucursal');
-
-		return count($codigos);
- 		//tokenizamos el ultimo codigo
-
-
-		//sumamos +1 al ultimo codigo
-
-
-		//el ultimo digito
-
-		//lo convertimos en string 
-
-	}
-
 
 	public function create()
 	{
@@ -105,7 +85,9 @@ class SucursalController extends Controller {
                 $request->all()
             ]);
 
-            return Redirect::to('sucursal');
+            return view('sucursal.index');
+
+            
 
         }
 

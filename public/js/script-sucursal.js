@@ -62,9 +62,6 @@ $(document).ready(function(){
 					$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
 				}
 			} )
-
-
-
 });
 
 
@@ -78,7 +75,7 @@ $(document).ready(function(){
 function Carga(){
 	//tabla donde duardamos la lista de sucursales
 	var tablaDatos = $("#Tsucursal > tbody");
-	var route = "/zzz/public/sucursal";
+	var route = "/fff/public/sucursal";
 
 	$("#Tsucursal > tbody").empty();
 
@@ -109,7 +106,7 @@ function Carga(){
 
 
 function Eliminar(btn){
-	var route = "http://localhost/zzz/public/sucursal/"+btn.value+"";
+	var route = "/fff/public/sucursal/"+btn.value+"";
 	var token = $("#token").val();
 	$.ajax({
 		url: route,
@@ -125,7 +122,7 @@ function Eliminar(btn){
 
 
 function Mostrar(btn){
-	var route = "http://localhost/zzz/public/sucursal/"+btn.value+"/edit";
+	var route = "/fff/public/sucursal/"+btn.value+"/edit";
 
 	$.get(route, function(res){
 		
@@ -151,7 +148,7 @@ $(document).on('click', '#actualizar',function (){
 	var dato1 = $("#CodSucursal").val();
 	var dato2 = $("#NombreSucursal").val();
 	var dato3 = $("#Direccion").val();
-	var route = "http://localhost/zzz/public/sucursal/"+value+"";
+	var route = "/fff/public/sucursal/"+value+"";
 	var token = $("#token").val();
 
 
@@ -190,12 +187,12 @@ $(document).on('click', '#actualizar',function (){
 $(document).on('click', '#registro-sucursal',function (){
 	//recuperamos valores
 	var dato1 = $("#CodSucursal").val();
-	var dato2 = $("#NombreSucursal").val();
+	var dato2 = $("#Nombre").val();
 	var dato3 = $("#Direccion").val();
 	
 	//ruta a la que hacemos referencia
 	
-	var route = "http://localhost/zzz/public/sucursal";
+	var route = "/fff/public/sucursal";
 	var token = $("#token").val();
 
 	$.ajax({
@@ -213,4 +210,6 @@ $(document).on('click', '#registro-sucursal',function (){
 			$("#msj-error").fadeIn();
 		}
 	});
+
+	window.location.href = "/fff/public/sucursal";
 });

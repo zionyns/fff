@@ -15,8 +15,6 @@ class DetalleIngresoController extends Controller {
 	 * @return Response
 	 */
 
-	
-
 	public function detalles(Request $request,$ingreso){
 
 			

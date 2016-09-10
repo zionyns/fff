@@ -40,7 +40,7 @@
 				<div class="box-body">
 					
 
-<table id="Tsucursal" class="table table-bordered table-striped">
+ 	<table id="Tsucursal" class="table table-bordered table-striped">
 	
 	<thead>
 

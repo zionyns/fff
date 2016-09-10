@@ -21,8 +21,6 @@ $(document).ready(function(){
 });
 
 
-
-
 $("#mensaje" ).click(function() {
  
   swal({   title: "Error!",   
@@ -130,7 +128,7 @@ $("#btnRecorrer").click(function () {
 
 
 
-    var route1 = "http://localhost/zzz/public/venta";
+    var route1 = "http://localhost/fff/public/venta";
     var token = $("#token").val();
 
     alert("precio total"+preciototal);
@@ -177,7 +175,7 @@ $("#btnRecorrer").click(function () {
 
 
 
-            var route = "http://localhost/zzz/public/detalleventa";
+            var route = "http://localhost/fff/public/detalleventa";
             var token = $("#token").val();
 
             $.ajax({
@@ -215,7 +213,7 @@ $("#btnRecorrer").click(function () {
                 $(this).css("background-color", "#ECF8E0");
             })
 
-                var route = "http://localhost/zzz/public/pagoventa";
+                var route = "http://localhost/fff/public/pagoventa";
                 var token = $("#token").val();
 
                 $.ajax({
@@ -250,7 +248,7 @@ $("#btnRecorrer").click(function () {
                             var comision=(monto*3/100)/numerovendedores;
                             alert(vendedor);
 
-                            var route = "http://localhost/zzz/public/ventausuario";
+                            var route = "http://localhost/fff/public/ventausuario";
                             var token = $("#token").val();
 
                             $.ajax({
@@ -272,14 +270,18 @@ $("#btnRecorrer").click(function () {
 
             })//fin recorrido moneda
 
-                        swal("SUCCESSFULL!", 
-                            "VENTA AGREGADA CORRECTAMENTE.", 
-                            "success");   
+                        swal("SUCCESSFULL!", "VENTA AGREGADA CORRECTAMENTE.", "success", window.location.href = "/fff/public/venta");
+
+
+
+
+                                        
+
                     } else {     
-                        swal("CALCELADO", 
-                            "UD A CANCELADO LA OPERACION ",
-                             "error");   
-                    } 
+                        swal("CANCELADO","UD A CANCELADO LA OPERACION ","error");   
+                    }
+
+                //window.location.href = "/fff/public/venta";        
                 });
     
 });

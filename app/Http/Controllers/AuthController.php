@@ -64,11 +64,13 @@ class AuthController extends Controller {
 
 
 		$name=Auth::user()->username;
+		$sucursal=Auth::user()->sucursal;
 
-		$usuario=DB::table('users')->where('username',$name)->get();
+
+		$usuario = DB::table('users')->join('sucursals', 'users.sucursal', '=', 'sucursals.CodSucursal')
+		->select('users.*','sucursals.NombreSucursal')->where('users.username',$name)->get();
 
 		//$perfil = DB::table('users')->join('sucursal', 'detalleingresos.producto', '=', 'productos.CodProducto')->select('detalleingresos.*', 'productos.nombre')->get();
-
 		return view('perfil',compact('usuario'));
 		//return Redirect::to('perfil')->with('usuario', $usuario);
 
