@@ -1,10 +1,8 @@
 
-
 $(document).ready(function(){
 
 
-
-		$( "#formsucursal" ).validate( {
+		$("#formsucursal" ).validate( {
 				rules: {
 					
 					Nombre: {
@@ -63,10 +61,6 @@ $(document).ready(function(){
 				}
 			} )
 });
-
-
-
-
 
 $(document).ready(function(){
 	Carga();
@@ -134,11 +128,6 @@ function Mostrar(btn){
 	});
 }
 
-
-
-
-
-
 //////////////////////ACTUALIZAR SUCURSAL///////////////////////////////////7777////////7
 
 $(document).on('click', '#actualizar',function (){
@@ -172,19 +161,23 @@ $(document).on('click', '#actualizar',function (){
 
 });
 
-
-
-
-
-
-
-
-
-
-
-
 ///////////////////////REGISTRO SUCURSAL///////////////////////////////////////7
 $(document).on('click', '#registro-sucursal',function (){
+
+	swal({      title: "ESTAS SEGURO?",   
+                text: "",   
+                type: "warning",   showCancelButton: true,   
+                confirmButtonColor: "#DD6B55",   
+                confirmButtonText: "CONFIRMAR",   
+                cancelButtonText: "CANCELAR",   
+                closeOnConfirm: false,   
+                closeOnCancel: false }, 
+                
+    function(isConfirm){   
+    if (isConfirm) {
+
+
+
 	//recuperamos valores
 	var dato1 = $("#CodSucursal").val();
 	var dato2 = $("#Nombre").val();
@@ -211,5 +204,17 @@ $(document).on('click', '#registro-sucursal',function (){
 		}
 	});
 
-	window.location.href = "/fff/public/sucursal";
+
+	swal("SUCCESSFULL!", "SUCURSAL AGREGADA CORRECTAMENTE", "success");
+
+
+
+
+                                        
+
+                    } else {     
+                        swal("CANCELADO","UD A CANCELADO LA OPERACION ","error");   
+                    }
+
+    });
 });

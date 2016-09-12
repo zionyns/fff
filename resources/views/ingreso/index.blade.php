@@ -21,8 +21,6 @@
 			<div class="col-md-15 col-md-offset-15">
 			<div class="box box-success">
 
-
-				
 				<div class="box-header with-border">
 			  		<h3 class="box-title">LISTA DE INGRESO DE PRODUCTOS</h3>
 					

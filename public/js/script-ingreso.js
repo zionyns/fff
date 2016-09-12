@@ -7,10 +7,7 @@ $(document).ready(function(){
             select:function(e,ui){
 
 
-                
-
                 $('#idproducto').val(ui.item.id);
-                
                 $('#descripcion').val(ui.item.nombre);
 
                 console.log(ui.item.stock);

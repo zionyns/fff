@@ -24,7 +24,7 @@
 
 				
 				<div class="box-header with-border">
-              		<h3 class="box-title">lista de sucursales</h3>
+              		<h3 class="box-title">LISTA DE SUCURSALES</h3>
 					
 					<div class="box-tools pull-right">	
 						

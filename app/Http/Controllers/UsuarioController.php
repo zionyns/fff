@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 
 use Illuminate\Http\Request;
 
@@ -41,16 +42,25 @@ class UsuarioController extends Controller {
 	 */
 	public function store(Request $request)
 	{
+			if($request->ajax()){
 
-		if($request->ajax()){
-            User::create($request->all());
+			$nombre = $request->input('first_name');
+			$apellido  = $request->input('last_name');
+			$rol = $request->input('rol');
+			$username  = $request->input('username');
+			$email = $request->input('email');
+			$password  = Hash::make($request->input('password'));
+			$sucursal = $request->input('sucursal');
+
+
+            User::create(['first_name'=>$nombre, 'last_name'=>$apellido,'rol'=>$rol,'username'=>$username,'email'=>$email, 'password'=>$password,'sucursal'=>$sucursal]);
             return response()->json([
                 $request->all()
             ]);
 
             return Redirect::to('sucursal');
 
-        }
+    }
 
 		return "usuario Registrado";
 	}

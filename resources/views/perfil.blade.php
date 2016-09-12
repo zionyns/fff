@@ -23,6 +23,10 @@
 				
 				<div class="box-body">
 
+				<div class="pull image">
+                <center><img src="{{ asset('dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image" /></center>
+            	</div>
+
 				{!! Form::open(array('id' =>'formperfil', 'class'=>'form-horizontal')) !!}
 
 					@foreach ($usuario as $u)

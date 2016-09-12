@@ -16,7 +16,7 @@ function Carga(){
 	var tablaDatos = $('#Tdetalles > tbody');
 	var route = "/fff/public/detalleingreso/detalles/"+ingreso+"";
 
-
+	
 
 	$('#Tdetalles > tbody').empty();
 

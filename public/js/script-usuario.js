@@ -1,27 +1,66 @@
 
 $(document).ready(function(){
 
-
-
-		$( "#formsucursal" ).validate( {
+		$("#formusuario").validate( {
 				rules: {
 					
-					Nombre: {
+					Username: {
 						required: true,
 						minlength: 5
 					},
-					Direccion: {
+					First_name: {
 						required: true,
 						minlength: 5,
+					},
+
+					Last_name: {
+						required: true,
+						minlength: 5,
+					},
+
+					Email: {
+						required: true,
+						minlength: 5,
+					},
+
+					Password: {
+						required: true,
+						minlength: 5,
+					},
+
+					Confirm_password: {
+						required: true,
+						minlength: 5,
+						equalTo: "#Password"
 					}
+
 				},
 				messages: {
 					
-					Nombre: {
+					Username: {
 						required: "Please enter a username",
 						minlength: "Your username must consist of at least 5 characters"
 					},
-					Direccion: {
+					First_name: {
+						required: "Please provide a password",
+						minlength: "Your password must be at least 5 characters long"
+					},
+					Last_name: {
+						required: "Please provide a password",
+						minlength: "Your password must be at least 5 characters long"
+					},
+
+					Email: {
+						required: "Please provide a password",
+						minlength: "Your password must be at least 5 characters long"
+					},
+
+					Password: {
+						required: "Please provide a password",
+						minlength: "Your password must be at least 5 characters long"
+					},
+
+					Confirm_password: {
 						required: "Please provide a password",
 						minlength: "Your password must be at least 5 characters long"
 					}
@@ -170,9 +209,25 @@ $(document).on('click', '#actualizar',function (){
 });
 
 
-///////////////////////REGISTRO SUCURSAL///////////////////////////////////////7
+///////////////////////REGISTRO USUARIO///////////////////////////////////////7
 $(document).on('click', '#registro-usuario',function (){
 	//recuperamos valores
+
+	swal({      title: "ESTAS SEGURO?",   
+                text: "",   
+                type: "warning",   showCancelButton: true,   
+                confirmButtonColor: "#DD6B55",   
+                confirmButtonText: "CONFIRMAR",   
+                cancelButtonText: "CANCELAR",   
+                closeOnConfirm: false,   
+                closeOnCancel: false }, 
+                
+    function(isConfirm){   
+    if (isConfirm) {
+
+
+
+
 	var username = $("#Username").val();
 	var first_name = $("#First_name").val();
 	var last_name = $("#Last_name").val();
@@ -203,4 +258,19 @@ $(document).on('click', '#registro-usuario',function (){
 			$("#msj-error").fadeIn();
 		}
 	});
+
+
+	swal("SUCCESSFULL!", "USUARIO AGREGADOS CORRECTAMENTE", "success");
+
+
+
+
+                                        
+
+                    } else {     
+                        swal("CANCELADO","UD A CANCELADO LA OPERACION ","error");   
+                    }
+
+    });
+
 });
